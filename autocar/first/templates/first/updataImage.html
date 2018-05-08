@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>updataImg</title>
+</head>
+<body>
+<form action="{% url 'first:Image' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name="userName" value="17680643321">
+    <input type="file" name="avatarUrl"/>
+    <br>
+    <span>上传图片</span>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

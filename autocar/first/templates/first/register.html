@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<form action="{% url 'first:register' %}" method="post">
+    {% csrf_token %}
+    <label for="userName">用户名：</label>
+    <input type="text" name="userName" placeholder="请输入手机号">
+{#    {{ form.userName }}#}
+    <span style="color: red">{{ form.userName.errors }}</span>
+    <br>
+    <label for="userName"> 密码：</label>
+    <input type="password" name="password" placeholder="请输入密码">
+{#    {{ form.password }}#}
+    <span style="color: red">{{ form.password.errors }}</span>
+    <br>
+    <label for="userName">再次输入密码：</label>
+    <input type="password" name="password2" placeholder="请再次输入密码">
+{#    {{ form.repassword}}#}
+    <span style="color: red">{{ msg }}</span>
+    <br>
+{#    <label for="userName">真实姓名：</label>#}
+{#    <input type="text" name="name" placeholder="真实姓名">#}
+{#    {{ form.name }}#}
+{#    <span style="color: red">{{ form.name.errors }}</span>#}
+{#    <br>#}
+{#    <label for="userName">地址id：</label>#}
+{#    <input type="text" name="addrId" placeholder="地址id">#}
+{#    {{ form.addrId }}#}
+{#    <span style="color: red">{{ form.addrId.errors }}</span>#}
+{#    <br>#}
+{#    <label for="userImage">上传头像</label>#}
+{#    <input type="file" name="userImage">#}
+{#    {{ form.userImage }}#}
+{#    <span style="color: red">{{ form.userImage.errors }}</span>#}
+    <input type="submit" name="submit" placeholder="提交">
+</form>
+</body>
+</html>

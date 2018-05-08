@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order</title>
+</head>
+<body>
+<form action="{% url 'first:order' %}" method="post">
+    {% csrf_token %}
+    <label >用户名：
+        <input type="text" name="userName">
+        <span style="color: red">{{ form.userName.errors }}</span>
+    </label>
+    <br>
+    <label >
+        商家ID:
+        <input type="text" name="busniessId">
+        <span style="color: red">{{ form.busniessId.errors }}</span>
+    </label>
+    <br>
+    <label>
+        小车ID
+        <input type="text" name="carId">
+        <span style="color: red">{{ form.carId.errors }}</span>
+    </label>
+    <br>
+    <label>
+        支付金额：
+        <input type="text" name="payMoney">
+    </label>
+    <br>
+    <label>
+        收获地址:
+        <input type="text" name="useraddr">
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" name='foods' value='1'>
+    </label>辣椒炒肉
+    <label>
+        <input type="checkbox" name='foods' value='2'>
+    </label>手撕鸡
+    <label>
+        <input type="checkbox" name='foods' value='3'>
+    </label>紫菜蛋汤
+    <br>
+    {% for foo in msg %}
+        <span style="color: red">{{ msg }}</span>
+    {% endfor %}
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
